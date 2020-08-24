@@ -1,0 +1,24 @@
+<import src="../../../libs/wxParse/wxParse.wxml" />
+<view class="wx-popup" hidden="{{flag}}">
+  <view class='popup-container'>
+  <view class="popup-head">
+    <image class="img-close" bindtap="_success" src="../../../assets/icons/close.png"></image>
+  </view>
+  <view wx:if="{{memberInfo.memberPhoto}}" class="img-box">
+    <image src='{{memberInfo.memberPhoto}}' class='m-i-img'></image>
+  </view>
+  <view class="wx-popup-name">{{memberInfo.memberName}}</view>
+  <view class="wx-popup-title">{{memberInfo.memberTitle}}</view>
+  <view class="empty-line"></view>
+
+    <scroll-view 
+      scroll-y 
+      class="wx-popup-content">
+      <!-- {{memberInfo.memberIntroduce}} -->
+      <view class="popup-content-content">
+        <template is="wxParse" data="{{wxParseData:memberIntroduce.nodes}}" />
+      </view>
+    </scroll-view>
+
+  </view>
+</view>

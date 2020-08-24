@@ -1,0 +1,57 @@
+@import "../../weui/weui.wxss";
+/*search-bar*/
+.ico {
+  height: 16px;
+  width: 16px;
+  vertical-align: middle
+}
+.search-bar{
+    margin-top: 0;
+}
+
+.search-bar + div{
+    margin-top: 51px;
+}
+.weui-search-bar__box {
+  display: flex;
+}
+.weui-search-bar__box.unfocused {
+  justify-content: center;
+  align-items: center;
+}
+
+.weui-search-bar__box.focused {
+  align-items: center;
+}
+
+
+.weui-search-bar__box .weui-search-bar__input{
+    height: 24px;
+    line-height: 24px;
+    /* padding: 6px 0; */
+    width: 100%;
+}
+.weui-search-bar__box{
+  line-height:34px;
+  height:34px;
+}
+.weui-search-bar__box .weui-icon-search,.weui-search-bar__box .weui-icon-clear{
+    line-height: 36px;
+}
+.weui-search-bar__cancel-btn{
+    color: #22A1F9;
+    line-height: 36px;
+}
+
+.weui-search-bar__box.focused {
+  align-items: center;
+  padding-left: 10px;
+}
+.weui-search-bar__box.focus input {
+  flex: 1
+}
+
+.weui-search-bar__box.unfocused span {
+  font-size: 16px;
+  color: #999;
+}

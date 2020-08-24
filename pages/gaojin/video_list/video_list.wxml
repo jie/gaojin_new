@@ -1,0 +1,21 @@
+<!--pages/gaojin/video_list/video_list.wxml-->
+<view class="page-video">
+  <scroll-view 
+  class="swiper-list"
+  enable-back-to-top="true"
+  upper-threshold="25px"
+  lower-threshold="25px"
+  scrolltolower="scrollBottom" 
+  scrolltoupper="refresh"> 
+
+    <view class="post-item" wx:for="{{membersData}}" wx:for-item="video">
+      <video class="item-video post-item-video" 
+      src="{{video.videoUrl}}"
+      poster="{{campusServerAddr}}{{video.coverUrl}}"></video>
+      <view class="post-item-title">
+      {{video.videoTitle}}
+      </view>  
+    </view>
+
+  </scroll-view>
+</view>

@@ -1,0 +1,32 @@
+<view class="af-wrapper af-img-checkbox">
+  <view class="af-field-title">
+    <text class="af-title-title" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{title}}">{{title}}</text>
+    <text class="af-title-required" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{required=='1'}}">*</text>
+    <text class="af-title-limit" style="color: {{formStyle.cpntDescColor}}" wx:if="{{selectControl !== '1'}}">[{{msgMap[selectControlValue]}}]</text>
+    <text class="af-title-err" wx:if="{{err}}">{{err}}</text>
+  </view>
+    <text class="af-title-desc" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+  <view class="af-img-options">
+    <view 
+      class="af-img-option {{formatedOptions[index].disabled}}" 
+      bindtap="optionsChange"
+      bindlongpress="onlongpressOption"
+      data-index="{{index}}"
+      wx:key="{{index}}" 
+      wx:for="{{options}}">
+      <image
+        class="af-img-option-image"
+        src="{{item.accessUrl || '../../../assets/images/image_frame.png'}}" 
+        data-index="{{index}}"
+        mode="aspectFill">
+      </image>
+      <view class="af-img-option-selected" wx:if="{{ selectedOpts[item.optId] }}" data-index="{{index}}">已选择</view>
+      <view class="limit-label">
+        {{item.optValue}}
+      </view>
+      <view class="limit-msg" wx:if="{{formatedOptions[index].limitationMsg}}">
+        {{formatedOptions[index].limitationMsg}}
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,168 @@
+.ellipsis {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.af-field-title {
+  margin-bottom: 20rpx;
+  font-size: 90%;
+}
+
+.af-field-title .af-title-title{
+  font-weight: bold;
+  /* color: #333; */
+}
+
+.af-title-err {
+  background-color: #7A3230;
+  color: #fff;
+  padding-left:10rpx;
+  padding-right: 10rpx;
+  font-size: 80%;
+}
+
+.af-title-limit {
+  font-size: 80%;
+  color: #999;
+  margin-right: 10rpx;
+}
+
+.af-title-support-filetype {
+  font-size: 80%;
+  color: #999;
+  margin-right: 10rpx;
+}
+
+.af-wrapper .af-title-desc{
+  display: block;
+  border-top: 2rpx dashed #999;
+  margin-bottom: 10rpx;
+  font-size: 80%;
+  /* color: #999; */
+  padding-top: 10rpx;
+  word-wrap: break-word
+}
+
+.af-title-required {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  display: inline-block;
+}
+
+.af-wrapper {
+  margin-bottom: 60rpx;
+}
+
+.af-wrapper .af-option {
+  font-size: 82%;
+}
+
+.af-option.disabled {
+  color: gray;
+}
+
+.limit-other {
+  font-size: 85%;
+}
+
+
+.limit-label, .limit-msg {
+  text-align: center;
+  color: #333;
+  font-size: 80%;
+  height: 25px;
+  line-height: 25px;
+  width: 100%;
+}
+
+.af-wrapper .af-com {
+  padding: 20rpx;
+  border: 2rpx solid #ddd;
+  margin-bottom: 10rpx;
+}
+
+.fa-lock-placehoder {
+  z-index: -1;
+  font-size: 85%;
+}
+
+
+/* options */
+.af-opt-layout-1 {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+}
+
+.af-opt-layout-2 {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+}
+
+.af-opt-layout-3 {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+}
+
+.af-opt-layout-4 {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+}
+
+.af-options {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+
+.af-option {
+  margin-bottom: 20rpx;
+}
+
+/* checkbox */
+
+/* .af-checkbox-group {
+} */
+
+.af-checkbox {
+  display: inline-block;
+  margin-bottom: 30rpx;
+}
+
+.af-checkbox-option {
+  font-size: 85%;
+  color: #333;
+}
+
+/* radio */
+
+/* .af-radio-group {
+} */
+
+.af-radio-option {
+  display: inline-block;
+  margin-bottom: 30rpx;
+}
+
+.af-radio .af-option {
+  font-size: 85%;
+  color: #333;
+}
+
+.masker {
+  background-color: rgba(0,0,0,0.5); 
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.masker-white {
+  background-color: rgba(255,255,255,0.01); 
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}

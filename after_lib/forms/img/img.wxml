@@ -1,0 +1,12 @@
+<view class="af-wrapper">
+  <view class="af-img af-img-mode-{{ imgDisplayTypes[imgDisplayType] }}" wx:if="{{ extImgUrl || fileName }}">
+    <image class="af-img-image" mode="widthFix" wx:if="{{ imgDisplayType == '1' }}" src="{{ imgSource == '1' ? accessUrl : extImgUrl }}"></image>
+    <image class="af-img-image" wx:if="{{ imgDisplayType == '2' }}" src="{{ imgSource == '1' ? accessUrl : extImgUrl }}" style="width: {{ width + 'px' }}; height: {{ height + 'px' }}"></image>
+  </view>
+  <view class="af-img af-img-mode-{{ imgDisplayTypes[imgDisplayType] }}" wx:else>
+    <image class="af-img-image" mode="widthFix" src="../_icons/formDefaultPicture.png"></image>
+  </view>
+  <view style="margin-top: 20rpx;">
+    <text class="af-title-desc af-img-align-{{ alignTypes[descAlign] }}" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+  </view>
+</view>

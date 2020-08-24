@@ -1,0 +1,9 @@
+<wux-toast id="wux-toast" />
+<view class="page">
+  <image 
+    wx:if="{{isSuccess !== false}}"
+    src="/assets/images/loading.gif" 
+    style="width: 60px; height: 60px;">
+  </image>
+  <view class="reload-btn" bindtap="reloadApp" wx:if="{{isSuccess === false}}">{{language.reload}}</view>
+</view>

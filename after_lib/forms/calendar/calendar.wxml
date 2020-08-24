@@ -1,0 +1,15 @@
+<view class="af-wrapper">
+  <view class="af-field-title">
+    <text class="af-title-title" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ title }}">{{ title }}</text>
+    <text class="af-title-required" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ required == '1' }}">*</text>
+    <text class="af-title-err" wx:if="{{err}}">{{err}}</text>
+  </view>
+  <text class="af-title-desc" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+  <view class="af-picker">
+    <picker mode="date" value="{{dateValue}}" bindchange="bindDateChange" fields="{{dateFieldOptions[dateFormat]}}">
+      <view class="af-picker-btn" wx:if="{{dateValue}}"> {{dateValue}} </view>
+      <view class="af-picker-btn" wx:else> {{initValue && initValue.length!=0?initValue[0].dataValue:''}} </view>
+    </picker>
+  </view>
+
+</view>

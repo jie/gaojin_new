@@ -1,0 +1,12 @@
+@import "../afform.wxss";
+
+.af-picker-btn {
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #ddd;
+  padding-left: 20rpx;
+}
+
+.af-picker {
+  margin-top: 20rpx;
+}

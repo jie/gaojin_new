@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "popup": "../../../libs/components/popup/popup"
+  },
+  "navigationBarTitleText" : "SAIFer"
+}

@@ -1,0 +1,7 @@
+<view class="af-wrapper af-cutoff">
+  <text class="af-cutoff-title af-align-{{alignTypes[titleAlign]}}" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{title}}" decode="true">{{title}}</text>
+
+  <view class="af-cutoff-line"></view>
+  <text class="af-title-desc af-align-{{ alignTypes[descAlign] }}" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+
+</view>

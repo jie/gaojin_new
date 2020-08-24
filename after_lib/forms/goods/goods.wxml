@@ -1,0 +1,47 @@
+<view class="af-wrapper af-good">
+  <view class="af-field-title">
+    <text class="af-title-title" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{title}}">{{title}}</text>
+    <text class="af-title-required" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{required==='1'}}">*</text>
+    <text class="af-title-limit" style="color: {{formStyle.cpntDescColor}}" wx:if="{{selectControl !== '1'}}">[{{msgMap[selectControlValue]}}]</text>
+    <text class="af-title-err" wx:if="{{err}}">{{err}}</text>
+  </view>
+  <text class="af-title-desc" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+  <view class="af-goods-options">
+    <view 
+      class="af-goods-option {{formatedOptions[index].disabled}}" 
+      data-index="{{index}}"
+      wx:key="{{index}}" 
+      wx:for="{{options}}">
+      <view class="af-goods-image">
+        <image
+          class="af-goods-image-img"
+          wx:if="{{item.accessUrl}}"
+          src="{{item.accessUrl}}" 
+          data-index="{{index}}"
+          mode="aspectFill">
+        </image>
+      </view>
+      <view class="af-goods-name ellipsis">{{item.goodsName}} {{formatedOptions[index].limitationMsg}}</view>
+      <view class="af-goods-price">¥{{item.goodsPrice}}</view>
+      <view class="af-goods-select" data-index="{{index}}">
+        <counter 
+          bind:action="onUpdateCounter"
+          class="af-goods-counter" 
+          optId="{{item.optId}}" 
+          price="{{item.goodsPrice}}"
+          counter="{{item.optValue}}" 
+          isDisabled="{{formatedOptions[index].disabled}}"
+          maxCount="{{ item.goodsMaxNum }}">
+        </counter>
+      </view>
+    </view>
+  </view>
+  <view class="af-goods-meta" wx:if="{{ prices && prices.length != 0 }}">
+    <view class="af-goods-meta-item" wx:key="{{index}}" wx:for="{{prices}}">
+      <text class="af-goods-meta-price ellipsis">{{ item.goodsPrice }}</text>
+      <text class="af-goods-meta-count">{{ item.counter }}</text>
+      <text class="af-goods-meta-total">¥{{ item.total }}</text>
+    </view>
+    <text class="af-goods-total">¥{{total}}</text>
+  </view>
+</view>

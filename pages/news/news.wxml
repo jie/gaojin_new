@@ -1,0 +1,83 @@
+<wux-toast id="wux-toast" />
+<view class="post-container">
+  <view class="post-category">
+      <scroll-view 
+        scroll-x
+        class="scrollview"
+        scroll-with-animation="{{true}}"
+        scroll-left="{{scrollLeft}}"
+        bindscroll="onTabScroll"
+        style="width: 100%;white-space: nowrap;overflow:hidden; position:relative;">
+        <view 
+          class="scroll-view-item" 
+          bindtap='onChangeScrollTab'
+          data-index="{{index}}"
+          wx:for="{{categories}}" 
+          wx:key="{{item.groupId}}">
+          <span 
+            data-index="{{index}}"
+            class="{{index==currentCategory?'current-target':''}}">
+            {{locale=='zh-CN'?item.groupName : item.groupEnName}}
+          </span>
+        </view>
+      </scroll-view>
+      <div class="bar" style="width: {{tabBorderWidth-30}}px; transition-duration: 500ms; transform: translateX({{tabBorderX}}px); margin-left: 15px;">
+          <div class="color"></div>
+      </div>
+  </view>
+
+    <view class="weui-panel weui-panel_access">
+      <view class="view_info_desc">
+        <view class="news-list-item" bindtap="goNewsDetail" wx:for="{{entities}}" wx:for-item="new" data-entity="{{new}}" >
+          <image class="news-list-item-image floatR" src="{{new.artcView.artcCover[0].accessUrl}}" wx:if="{{new.artcView && new.artcView.artcCover  && new.artcView.artcCover[0].accessUrl}}"></image>
+          <view space="nbsp" class="news-list-item-title">
+            {{new.artcTitle}}
+          </view>
+          <view class="news-list-item-tags">
+            <view class="news-cate">
+              {{new.groupInfo.groupName}}
+            </view>
+            <view class="news-time">
+              {{new._createAt}}
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+  <!-- <view class="swiper-container">
+    <view class="swiper-wrapper">
+      <view 
+        class="swiper-slide"
+        wx:for="{{entities}}" 
+        wx:key="{{item.artcId}}" 
+        bindtap="goNewsDetail"
+        data-entity="{{item}}">
+        <view class="weui-cells">
+          <view class="swiper-item">
+            <view class="post-item">
+              <h4 class="post-title" data-entity="{{item}}">{{item.artcTitle}}</h4>
+              <view class="news-list-item-tags">
+                <view class="news-cate floatL">
+                  {{item.groupInfo.groupName}}
+                </view>
+                <view class="news-time floatL">
+                  {{item._createAt}}
+                </view>
+              </view>
+            </view>
+            <view>
+              <image 
+                class="thumb news-imgs news-list-item-image" 
+                mode="aspectFill" 
+                src="{{item.artcView.artcCover[0].accessUrl}}" alt="" 
+                wx:if="{{item.artcView && item.artcView.artcCover  && item.artcView.artcCover[0].accessUrl}}"
+                data-entity="{{item}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+</view>

@@ -1,0 +1,15 @@
+<view class="weui-media-box weui-media-box_appmsg weui-media-small" wx:if="{{avatar}}">
+  <view class="weui-media-box__hd">
+    <image class="weui-media-box__thumb" mode="aspectFill" src="{{avatar}}" />
+  </view>
+  <view class="weui-media-box__bd">
+    <view class="weui-media-box__title">
+      {{locale == 'zh-CN' ? member.alumniNameCN:member.alumniNameEN}}
+    </view>
+    <p class="weui-media-box__desc">{{subTitle || member.className}}</p>
+  </view>
+  <view class="weui-media-box__ft">
+    <slot></slot>
+  </view>
+  <view class="nav-layer" bindtap="goDetail"></view>
+</view>

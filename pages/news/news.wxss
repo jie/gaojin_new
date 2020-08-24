@@ -1,0 +1,46 @@
+@import "../../libs/weui/weui.wxss";
+@import "../../assets/style.wxss";
+@import "../../pages/home_blank/home_blank.wxss";
+
+.post-container {
+  min-height: 100vh;
+  padding-top: 50px;
+  background-color: #F5F7FB;
+}
+
+.swiper-category .swiper-slide {
+  display: inline-block;
+}
+
+.scroll-view-item {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: auto;
+  box-sizing: border-box;
+  color: #888;
+  font-size: 14px;
+}
+
+.current-target {
+  color: #0A0A0AFF;
+}
+
+.bar {
+  border-bottom: 3px solid #b6a37e;
+}
+
+.post-category {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+
+}
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}

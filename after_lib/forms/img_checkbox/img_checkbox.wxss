@@ -1,0 +1,48 @@
+@import "../afform.wxss";
+.af-img-options {
+  justify-content: center;
+  display: flex;
+}
+
+.af-img-option {
+  width: 100px;
+  min-height: 125px;
+  box-sizing: border-box;
+  display: inline-block;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  /* align-items: center;
+  justify-content: center; */
+  overflow: hidden;
+  position: relative;
+}
+
+.af-img-option .af-img-option-image {
+  width: 100px;
+  height: 100px;
+  background-color: #f5f5f5;
+  border:2rpx solid #999;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.af-img-option-selected {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-align: center;
+  font-size: 80%;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.af-img-option.disabled {
+  filter:grayscale(100%);
+  color: #ccc
+}

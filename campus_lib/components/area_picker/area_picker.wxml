@@ -1,0 +1,13 @@
+<view class="area_picker">
+  <picker 
+    mode="multiSelector" 
+    bindchange="bindMultiPickerChange" 
+    bindcolumnchange="bindMultiPickerColumnChange" 
+    value="{{multiIndex}}" 
+    range="{{multiArray}}"
+    range-key="name">
+    <view class="picker">
+      {{myDisplayText}}
+    </view>
+  </picker>
+</view>

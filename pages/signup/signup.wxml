@@ -1,0 +1,55 @@
+<wux-toast id="wux-toast" />
+<wux-dialog id="wux-dialog" />
+<wux-loading id="wux-loading" />
+<view class="page" wx:if="{{isShowForm}}">
+  <af-form 
+    enviroment="{{settings.enviroment}}"
+    formCpnts="{{cpnts}}" 
+    formObj="{{formObj}}" 
+    locale="{{pageLocale}}"
+    opCliId="{{opCliId}}"
+		style="{{style}}"
+    bind:action="triggerSubmitForm"></af-form>
+</view>
+
+
+<view class="page" style="min-height: 100vh; padding: 13px; box-sizing: border-box;" wx:if="{{isShowMenu}}">
+	<view style="padding-top: 50px;">
+		<view style="width:80px; height:80px; padding: 0; border-radius: 40px; margin: 0 auto; display:flex;justify-content:center;align-items:center; background-color: {{style.backgroundColor}}">
+			<image class="item icon" style="width:48px; height: 48px;" src="../../assets/images/success_image.png"></image>
+		</view>
+	</view>
+
+	<view class="notify_txt" wx:if="notify_txt">
+		<text class="item item-msg">{{notify_txt}}</text>
+	</view>
+
+	<view class="weui-btn-area">
+		<button class="weui-btn" bindtap="jumpFeedbackPage" style="background-color: {{style.backgroundColor}}; color: {{style.color}}">{{language.base.view_feedback}}</button>
+	</view>
+
+	<view class="weui-btn-area" wx:if="{{isShowViewButton}}" style="background-color: {{style.backgroundColor}}; color: {{style.color}}">
+		<button class="weui-btn" bindtap="returnToForm" style="background-color: {{style.backgroundColor}}; color: {{style.color}}">{{language.base.actionsheet_menu_01}}</button>
+	</view>
+
+	<view class="weui-btn-area" wx:if="{{isShowPaymentButton}}" style="background-color: {{style.backgroundColor}}; color: {{style.color}}">
+		<button class="weui-btn" bindtap="startPayOrder" style="background-color: {{style.backgroundColor}}; color: {{style.color}}">{{language.base.actionsheet_menu_02}}</button>
+	</view>
+
+	<view class="weui-btn-area" wx:if="{{formObj.formView.submitRedirect}}">
+		<button class="weui-btn" bindtap="jumpSpecificPage" style="background-color: {{style.backgroundColor}}; color: {{style.color}}">{{language.base.actionsheet_menu_05}}</button>
+	</view>
+
+	<view class="weui-btn-area" wx:if="{{activity && activity.onlineType == 3}}">
+		<button class="weui-btn" bindtap="jumpOnlinePage" style="background-color: {{style.backgroundColor}}; color: {{style.color}}">{{language.base.actionsheet_menu_03}}</button>
+	</view>
+
+	<view class="weui-btn-area" wx:if="{{formObj.formView.displayManualSignQrcodeAfterSubmit == 1 && formObj.formManualSignUrl}}">
+		<button class="weui-btn" bindtap="jumpTicketPage" style="background-color: {{style.backgroundColor}}; color: {{style.color}}">{{language.base.get_meeting_eticket}}</button>
+	</view>
+
+	<view class="weui-btn-area">
+		<button class="weui-btn" bindtap="returnToForm" style="background-color: {{style.color}}; color: #333">{{language.base.return}}</button>
+	</view>
+
+</view>

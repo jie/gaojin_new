@@ -1,0 +1,6 @@
+@import "../afform.wxss";
+
+.af-com .city-name-txt {
+  margin-right: 10px;
+  vertical-align: middle
+}

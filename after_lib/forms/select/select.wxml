@@ -1,0 +1,25 @@
+<view class="af-wrapper af-select">
+  <view class=" af-field-title">
+    <text class="af-title-title" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ title }}">{{ title }}</text>
+    <text class="af-title-required" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ required == '1' }}">*</text>
+    <text class="af-title-err" wx:if="{{err}}">{{err}}</text>
+  </view>
+  <text class="af-title-desc" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+  <view class="af-select-group">
+    <view class="af-select-header" bindtap="ontapSelectHeader" wx:if="{{ selected === '' }}">
+      {{ defaultTip }}
+      <image class="af-down-icon {{ showOptions?'reversed':'' }}" mode="scaleToFill" src="../_icons/arrow-down.png"></image>
+    </view>
+    <view class="af-select-header" bindtap="ontapSelectHeader" wx:else>
+      {{ options[selected].optValue }}
+      <image class="af-down-icon {{ showOptions?'reversed':'' }}" mode="scaleToFill" src="../_icons/arrow-down.png"></image>
+    </view>
+    <scroll-view class="af-select-panel" scroll-y wx:if="{{ showOptions }}">
+      <view class="af-select-option {{ defaultOptIds.includes(item.optId) ? 'selected':'' }}" wx:key="{{ index }}" wx:for="{{ options }}" data-optid="{{ item.optId }}" data-selected="{{ index }}" bindtap="selectChange">{{ item.optValue }}</view>
+    </scroll-view>
+    <view class="af-other-field" wx:if="{{ !showOptions && otherOption == '2' && selected === (options.length - 1) }}">
+      <input class="af-com" type="text" bindinput="onOtherInputChange" placeholder="{{otherOptionLabel}}"></input>
+    </view>
+  </view>
+</view>
+<view class="masker-white" wx:if="{{ showOptions?true:false }}" bindtap="closeOptions"></view>

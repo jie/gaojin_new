@@ -1,0 +1,22 @@
+<view class="af-wrapper">
+  <view class="af-field-title">
+    <text class="af-title-title" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ title }}">{{ title }}</text>
+    <text class="af-title-required" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ required == '1' }}">*</text>
+    <text class="af-title-err" wx:if="{{err}}">{{err}}</text>
+  </view>
+  <text class="af-title-desc" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+  <view class="af-picker">
+    <picker-view value="{{glDateNoYearMutiIndex}}" bindchange="bindDateGlNoYear" wx:if="{{ datePickerAttr.dateType == 1}}">
+      <picker-view-column>
+        <view wx:for="{{glMonthsNoYear}}" wx:key>{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{glDaysNoYear}}" wx:key>{{item}}日</view>
+      </picker-view-column>
+    </picker-view>
+
+  </view>
+
+</view>
+
+

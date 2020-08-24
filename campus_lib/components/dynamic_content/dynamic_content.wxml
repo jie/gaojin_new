@@ -1,0 +1,84 @@
+<view class="moments-post">
+  <view class="post-wrapper">
+    <navigator class="avatar" url="{{url}}">
+      <image class="avatar-image" mode="aspectFill" wx:if="{{avatar}}" src="{{avatar}}" />
+    </navigator>
+    <view class="username">
+      <view class="header">
+        <view class="author">{{emoji}}{{locale == 'en-US'?entity.alumniNameEN:entity.alumniNameCN}}</view>
+        <view class="title" wx:if="{{entity.careerExperience}}">{{entity.careerExperience.careerName}} | {{entity.careerExperience.companyName}}</view>
+        <view class="title" wx:else>{{entity.educationExperience.majorName}} | {{entity.educationExperience.schoolName}}</view>
+      </view>
+      <span class="createAt">{{entity.createDate}}</span>
+    </view>
+  </view>
+  <view class="paragraph">
+    {{entity.dynamicContent}}
+  </view>
+  <view class="thumbnails" style="width: {{imageStyle.width * 3}}px">
+    <view 
+      class="thumb-wrapper" 
+      bindtap="ontapPicture"
+      data-index="{{index}}"
+      wx:key="{{item}}" 
+      wx:for="{{entity.images}}" 
+      style="width: {{imageStyle.width}}px;height: {{imageStyle.height}}px">
+    <view 
+      class="thumbnail" 
+      data-index="{{index}}"
+      style="background-image: url({{item}}); width: {{imageStyle.width - 10}}px;height: {{imageStyle.height - 10}}px"></view>
+    </view>
+  </view>
+  <view class="tool-bar">
+    <view class="tool">
+      <view class="tool-btn">
+        <image class="ico" src="{{zanSelectedImage}}" wx:if="{{entity.praised}}"/>
+        <image class="ico" src="{{zanImage}}" bindtap="createPraise" wx:else />   <view class="txt">{{entity.praiseCount=='0'?'':entity.praiseCount}}</view></view>
+      <view class="tool-btn">
+        <image class="ico" src="{{commentImage}}" bindtap="showCommentBox" /> <view class="txt" wx:if="{{entity.comments && entity.comments.length!==0}}">{{entity.comments.length}}</view></view>
+    </view>
+    <view class="location" wx:if="{{entity.dynamicCity}}">
+      <view class="tool-btn">
+        <image class="ico" src="{{localeImage}}" /><view class="txt">{{entity.dynamicCity}}</view></view>
+    </view>
+  </view>
+  <!-- 评论区 -->
+  <view class="comment" wx:if="{{entity.comments && entity.comments.length!==0}}">
+    <view class="comment-ul">
+      <view 
+        class="comment-li"
+        data-index="{{idx}}"
+        wx:for-index="idx"
+        wx:for-item="comment" 
+        wx:key="{{comment.commentID}}" 
+        wx:for="{{entity.comments}}">
+        <span
+          wx:if="{{comment.replyCommentID!=='0'}}"
+          class="origin-user" 
+          data-alumniid="{{entity.comments[comment.originIndex].alumniID}}" 
+          data-index="{{idx}}" 
+          bindtap="goAlumniView">{{locale =='en-US'?entity.comments[comment.originIndex].alumni.alumniNameEN: entity.comments[comment.originIndex].alumni.alumniNameCN}}</span>
+        <span class="reply-text" wx:if="{{comment.replyCommentID!=='0'}}">{{ locale =='en-US'?' reply ':'回复' }}</span>
+        <span 
+          class="comment-user" 
+          data-alumniid="{{comment.alumniID}}" 
+          data-index="{{idx}}" 
+          bindtap="goAlumniView">{{locale =='en-US'?comment.alumni.alumniNameEN: comment.alumni.alumniNameCN}}</span>: <span class="comment-content" data-index="{{idx}}" bindtap="showCommentReplyBox" >{{comment.commentContent}}</span>
+      </view>
+    </view>
+  </view>
+
+  <view class="input-section" confirm-type="send" wx:if="{{isShowSender}}">
+    <input 
+      bindblur="onBlurInput" 
+      bindinput="onInputChange"
+      placeholder="{{sendToPlaceholder}}" 
+      focus="{{true}}" 
+      adjust-position="{{true}}" 
+      cursor-spacing="5" />
+    <view class="send-btn" bindtap="createComment">
+      <image src="{{sendImage}}" style="height: 24px; width: 24px;"></image>
+    </view>
+  </view>
+
+</view>

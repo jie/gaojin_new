@@ -1,0 +1,23 @@
+{
+  "name": "aftercrm_wxapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/zhouyang.me/aftercrm_wxapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/zhouyang.me/aftercrm_wxapp/issues"
+  },
+  "homepage": "https://gitlab.com/zhouyang.me/aftercrm_wxapp#readme",
+  "dependencies": {
+    "miniprogram-recycle-view": "^0.1.5",
+    "weui-miniprogram": "^0.2.2"
+  }
+}

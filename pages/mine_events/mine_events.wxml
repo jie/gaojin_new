@@ -1,0 +1,48 @@
+<wux-toast id="wux-toast" />
+<wux-loading id="wux-loading" />
+<view class="page {{ isShowSearchPopup?'locked':'' }}">
+  <view class="header">
+    <tab tabItems="{{tabItems}}" selected="{{tabIndex}}" selectedColor="{{settings.THEME.bgColor}}" bind:action="triggerTabChange" />
+  </view>
+  <view class="events" wx:if="{{ eventDatas && eventDatas.length != 0 }}">
+      <view class="event-wrapper" wx:for="{{eventDatas}}" wx:key="{{index}}">
+        <navigator url="{{ '/pages/event_detail/event_detail' + '?actvtId=' + item.actvtId + '&formDataRowId=' +  item.formDataRowId}}" class="event">
+          <view class="thumb">
+            <image wx:if="{{ item.cover}}" src="{{ item.cover.accessUrl }}" mode="widthFix"></image>
+          </view>
+          <view class="content">
+            <view class="wrapper">
+              <view class="title">
+                <text>{{ item.actvtName }}</text>
+              </view>
+            </view>
+            <view class="meta">
+              <view class="location" wx:if="{{ item.displayParentCityName || item.displayCityName}}">
+                <image class="ico" src="../../assets/icons/location.png"></image>
+                <text>{{ item.displayParentCityName }} {{ item.displayCityName }} {{ item.actvtAddress }}</text>
+              </view>
+              <view class="create_at">
+                <image class="ico" src="../../assets/icons/meditor-time.png"></image>
+                <text>{{ item._createTime }}</text>
+              </view>
+            </view>
+          </view>
+        </navigator>
+        <view class="ticket-info" wx:if="{{currentKey!=3 && currentKey!=4}}">
+          <view class="ticket-btn" style="border-color: {{settings.THEME.bgColor}};color: {{settings.THEME.bgColor}}" bindtap="goTicket" data-formid="{{item.formId}}" data-actvtid="{{item.actvtId}}" data-title="{{item.actvtName}}">{{language.get_ticket}}</view>
+        </view>
+      </view>
+  </view>
+  <view class="empty" wx:if="{{isEmpty === true}}">
+    <image wx:if="{{false}}" src="../../assets/icons/empty_box.png" style="width: 48px; height: 48px"></image>
+    <text>{{language.not_find_events}}</text>
+    <view bindtap='goEventsPage' class="recent-events-btn">{{language.search_recent_events}}</view>
+  </view>
+  <view class="masker" wx:if="{{ isShowSearchPopup?true:false }}" catchtouchmove="true" bindtap="onTapSearchHeader"></view>
+
+  <view class="footer" wx:if="{{ events && pageData && pageData.pagetotal >= 6 && showBottomLine }}">
+    <view class="sep">
+      <text>{{language.base.end_line}}</text>
+    </view>
+  </view>
+</view>

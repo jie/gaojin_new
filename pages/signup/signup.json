@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "af-form": "../../after_lib/forms/simple_form/simple_form",
+    "wux-button": "../../dist/button/index",
+    "wux-toast": "../../dist/toast/index",
+    "wux-dialog": "../../dist/dialog/index",
+    "wux-loading": "../../dist/loading/index"
+  }
+}

@@ -1,0 +1,15 @@
+<view class="af-wrapper">
+  <view class="af-field-title">
+    <text class="af-title-title" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ title }}">{{ title }}</text>
+    <text class="af-title-required" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ required == '1' }}">*</text>
+    <text class="af-title-err" wx:if="{{err}}">{{err}}</text>
+  </view>
+  <text class="af-title-desc" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+  <view class="af-stars">
+    <view class="af-star" wx:for="{{ options }}" wx:key="{{ index }}" bindtap="ontapStar" data-stars="{{ item.stars }}">
+      <image class="star-on-icon" src="{{ starOnSrc }}" data-stars="{{ item.stars }}" wx:if="{{ item.selected }}"></image>
+      <image class="star-off-icon" src="{{ starOffSrc }}" data-stars="{{ item.stars }}" wx:else></image>
+    </view>
+  </view>
+</view>
+

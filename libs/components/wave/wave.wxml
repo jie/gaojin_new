@@ -1,0 +1,14 @@
+<view class="banner-wrapper">
+	<view class="userinfo-sec">
+		<open-data type="userAvatarUrl" class="avatar" />
+		<open-data type="userNickName" class="color-white text-size-28" />
+	</view>
+	<!-- <view class="wave-wrapper">
+		<view class="water">
+			<view class="water-c">
+				<view class="water-1"> </view>
+				<view class="water-2"> </view>
+			</view>
+		</view>
+	</view> -->
+</view>

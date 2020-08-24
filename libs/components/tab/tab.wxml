@@ -1,0 +1,12 @@
+<view>
+  <view class="tab-items">
+    <view 
+      class="tab-item {{index === selected?'selected':''}}" 
+      wx:for="{{tabItems}}" 
+      wx:key="{{item.key}}"
+      bindtap="onSelectTabItem"
+      data-index="{{index}}">
+        <view class="item-text" data-index="{{index}}" style="border-bottom-color: {{selectedColor}}; border-bottom-width: {{index === selected? '3px':'0'}}; border-bottom-style: solid;">{{item.name}}</view> 
+    </view>
+  </view>
+</view>

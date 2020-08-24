@@ -1,0 +1,26 @@
+<!--pages/gaojin/project/project.wxml-->
+<view class="view-page">
+  <view class="project">
+    <view class="project-item" bindtap="jumpDetail1">
+      <image class="item-img" src="../../../assets/app_images/gaojin/quanrizhi.png"></image>
+      <view class="item-row">
+        <text class="item-title">全日制金融MBA</text>
+        <image class="item-arrow" src="../../../assets/icons/arrow-right-off.png"></image>
+      </view>
+    </view>
+    <view class="project-item" bindtap="jumpDetail2">
+      <image class="item-img" src="../../../assets/app_images/gaojin/zaizhi.png"></image>
+      <view class="item-row">
+        <text class="item-title">在职金融MBA</text>
+        <image class="item-arrow" src="../../../assets/icons/arrow-right-off.png"></image>
+      </view>
+    </view>
+    <view class="project-item" bindtap="jumpDetail3">
+      <image class="item-img" src="../../../assets/app_images/gaojin/jinrong.png"></image>
+        <view class="item-row">
+          <text class="item-title">金融MBA新睿（全国班）</text>
+          <image class="item-arrow" src="../../../assets/icons/arrow-right-off.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

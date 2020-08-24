@@ -1,0 +1,33 @@
+@import "../afform.wxss";
+
+.af-img-image {
+  /* width: 100%; */
+}
+
+.af-img-mode-stretch .af-img-image {
+  width: 100%;
+}
+
+.af-img-mode-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.af-title-desc {
+  font-size: 85%;
+  color: #666;
+  border-top: 0 !important;
+}
+
+.af-img-align-left {
+  text-align: left;
+}
+
+.af-img-align-center {
+  text-align: center;
+}
+
+.af-img-align-right {
+  text-align: right;
+}

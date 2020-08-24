@@ -1,0 +1,8 @@
+<view class="af-wrapper af-text">
+  <view class="af-field-title">
+    <text class="af-title-title" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ title }}">{{ title }}</text>
+    <text class="af-title-required" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ required == '1' }}">*</text>
+  </view>
+  <rich-text class="af-title-desc" style="color: {{formStyle.cpntDescColor}}" nodes="{{desc}}" wx:if="{{desc}}"></rich-text>
+  <slot></slot>
+</view>

@@ -1,0 +1,29 @@
+@import "../../libs/weui/weui.wxss";
+@import "../../assets/style.wxss";
+
+
+.event_guest_view {
+  background-color: #f5f5f5;
+}
+
+.view_info_desc {
+  font-size: 80%;
+}
+
+.middle {
+  vertical-align: middle
+}
+
+.weui-panel_access::after {
+  border-bottom: 0;
+}
+
+.guest_name {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.guest_title {
+  padding-left: 30px;
+  padding-right: 30px;
+}

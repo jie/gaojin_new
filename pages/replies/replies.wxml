@@ -1,0 +1,16 @@
+<wux-toast id="wux-toast" />
+<view class="weui-panel" wx:if="{{ entities && entities.length!=0 }}">
+  <view class="weui-cells" wx:for="{{ entities }}" wx:key="{{ index }}" style="position: relative;">
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__hd">
+        <image src="../../assets/icons/no_user.png" class="avatar"></image>
+      </view>
+      <view class="weui-cell__bd weui-cell_primary">
+        <view>{{item.cttName?item.cttName:language.unknown_user}}</view>
+        <view class="weui-cell__desc">{{item.displayCreateTime}}</view>
+      </view>
+      <view class="weui-media-box__ft">
+      </view>
+    </view>
+  </view>
+</view>

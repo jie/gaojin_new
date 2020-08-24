@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText" : "文章",
+  "usingComponents": {
+    "wux-dialog": "../../dist/dialog/index",
+    "wux-toast": "../../dist/toast/index"
+  }
+}

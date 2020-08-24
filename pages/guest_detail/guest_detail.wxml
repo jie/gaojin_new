@@ -1,0 +1,27 @@
+<wux-toast id="wux-toast" />
+<view class="event_guest_view" wx:if="guest">
+<view class="guest_view_box">
+    <view class="guest_infos">
+        <view class="guest_avatar" wx:if="{{ guest.actvtGuestPhoto && guest.actvtGuestPhoto.length != 0 }}">
+            <image mode="aspectFill" src="{{ guest.actvtGuestPhoto[0].accessUrl }}" alt="" />
+        </view>
+            <view class="guest_name" wx:if="{{guest.guestName}}">{{ guest.guestName }}</view>
+            <view class="guest_title" wx:if="{{guest.guestTitle}}">
+              <text decode="true">{{ guest.guestTitle }}</text>
+            </view>
+        </view>
+        <view class="weui-panel weui-panel_access" wx:if="{{ guest.guestTopic }}">
+            <view class="weui-panel__hd">{{language.speech_topic}}</view>
+            <view class="view_info_desc">
+                <p>{{ guest.guestTopic }}</p>
+            </view>
+        </view>
+        <view class="weui-panel weui-panel_access" wx:if="{{ guest.guestDesc }}">
+            <view class="weui-panel__hd">{{language.guest_intro}}</view>
+            <view class="view_info_desc">
+                <text decode="true">{{ guest.guestDesc }}</text>
+            </view>
+        </view>
+    </view>
+</view>
+

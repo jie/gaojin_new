@@ -1,0 +1,83 @@
+<wux-toast id="wux-toast" />
+<view class="page {{ isShowSearchPopup?'locked':'' }} {{settings.enviroment == 'ceibs' || settings.enviroment == 'pro_kedge' ? 'ctype': ''}}">
+	<filterbar bind:onFilterTabChanged="onFilterTabChanged" bind:onFilterAllItemChanged="onFilterAllItemChanged" bind:onFilterItemChanged="onFilterItemChanged" isDark="{{true}}" entities="{{filterBarItems}}" headerItems="{{topItems}}" allItems="{{allItems}}" maxheight="{{systemInfo.windowHeight / 2}}" enviroment="{{settings.enviroment}}" />
+	<block wx:if="{{settings.enviroment !== 'ceibs' && settings.enviroment !== 'pro_kedge'}}">
+		<view class="events" wx:if="{{ events && events.length !== 0 }}">
+			<navigator url="{{ '/pages/event_detail/event_detail' + '?actvtId=' + item.actvtId }}" class="event" wx:for="{{events}}" wx:key="{{index}}">
+				<view class="alayout">
+					<view class="triangle-bottomright" wx:if="{{item.isExpired}}"></view>
+					<view class="expired-text" wx:if="{{item.isExpired}}">
+						<text>{{language.event_expired}}</text>
+					</view>
+					<view class="thumb">
+						<image class="thumb-img" wx:if="{{ item.actvtView.actvtCover.length!=0 }}" src="{{ item.actvtView.actvtCover[0].accessUrl }}" mode="widthFix"></image>
+					</view>
+					<view class="content">
+						<view class="wrapper">
+							<view class="title">
+								<text>{{ item.actvtName }}{{curveBgPosition}}</text>
+							</view>
+							<view class="meta">
+								<view class="location" wx:if="{{ item.parentCityName || item.cityName}}">
+									<image class="ico" src="../../assets/icons/location.png"></image>
+									<text>{{ item.parentCityName || '' }} {{ item.cityName || '' }} {{ item.actvtAddress || '' }}</text>
+								</view>
+								<view class="create_at">
+									<image class="ico" src="../../assets/icons/meditor-time.png"></image>
+									<text>{{ item._createTime }}</text>
+									<span style="float: right; display:block; text-align: left;">
+										<image class="ico" style="width:19px;height:19px" src="../../assets/icons/display.png" wx:if="{{item.viewNum != 0}}"></image>
+										<text wx:if="{{item.viewNum!=0}}">{{ item.viewNum }}</text>
+									</span>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</navigator>
+		</view>
+	</block>
+	<block wx:else>
+		<view class="events clayout-wrapper" wx:if="{{ events && events.length !== 0 }}">
+			<image src="../../assets/app_images/ceibs/eventbg.png" class="sitebg" wx:if="{{settings.enviroment == 'ceibs'}}"></image>
+			<image src="../../assets/app_images/kedge/eventbg.png" class="sitebg" wx:if="{{settings.enviroment == 'pro_kedge'}}"></image>
+			<!-- <view class="bgcube" style="width: {{systemInfo.screenWidth - 32}}px;"></view> -->
+			<view class="clayout-events">
+				<navigator url="{{ '/pages/event_detail/event_detail' + '?actvtId=' + item.actvtId }}" class="event" wx:for="{{events}}" wx:key="{{index}}">
+					<view class="clayout">
+						<view class="thumb">
+							<image class="thumb-img" wx:if="{{ item.actvtView.actvtCover.length!=0 }}" src="{{ item.actvtView.actvtCover[0].accessUrl }}" mode="widthFix"></image>
+						</view>
+						<view class="content">
+							<view class="wrapper">
+								<view class="title">
+									<text>{{ item.actvtName }}</text>
+								</view>
+								<view class="meta">
+									<view class="create_at">
+										<image class="ico" src="../../assets/icons/meditor-time.png"></image>
+										<text>{{ item._createTime }}</text>
+										<span class="ellipsis" style="float: right; display:block;  text-align: right; width: 150px">
+											<image class="ico" src="../../assets/icons/area-location.png" wx:if="{{item.viewNum != 0}}"></image>
+											<block wx:if="{{item.onlineType == 3 }}">
+                        <text>{{ language.live_streaming }}</text>
+                      </block>
+											<block wx:else>
+												<text>{{ item.cityName || '' }}</text>
+											</block>
+										</span>
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</navigator>
+			</view>
+		</view>
+	</block>
+	<view class="footer" wx:if="{{ events && pageData && pageData.pagetotal >= 6 && showBottomLine }}">
+		<view class="sep">
+			<text>{{language.base.end_line}}</text>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,170 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.2",
+	"appid": "wx193fa34e9660a973",
+	"projectname": "%E9%AB%98%E9%87%911",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 15,
+			"list": [
+				{
+					"id": 0,
+					"name": "share",
+					"pathName": "pages/event_detail/event_detail",
+					"query": "actvtId=udh674h4b9l0oa149bvji1yl7lezv25n"
+				},
+				{
+					"id": -1,
+					"name": "share_home",
+					"pathName": "pages/home/home",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "share_mine_events",
+					"pathName": "pages/mine_events/mine_events",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "university",
+					"pathName": "pages/university_detail/university_detail",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "branch_view",
+					"pathName": "pages/branch_view/branch_view",
+					"query": "associationID=1"
+				},
+				{
+					"id": -1,
+					"name": "event_detail",
+					"pathName": "pages/event_detail/event_detail",
+					"query": "actvtId=1md9q34h8u2wlab14am8y3a6vfsfjrdw"
+				},
+				{
+					"id": -1,
+					"name": "mine",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mine_settings",
+					"pathName": "pages/mine_settings/mine_settings",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mine_events",
+					"pathName": "pages/mine_events/mine_events",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "class_create",
+					"pathName": "pages/class_create/class_create",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "myclass",
+					"pathName": "pages/myclass/myclass",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "life",
+					"pathName": "pages/life/life",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "regist",
+					"pathName": "pages/regist/regist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "replies",
+					"pathName": "pages/replies/replies",
+					"query": "formId=1eejf352og76fwqu1huzby1bjk0211eg&count=95",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "regist_school",
+					"pathName": "pages/regist_school/regist_school",
+					"scene": null
+				}
+			]
+		}
+	}
+}

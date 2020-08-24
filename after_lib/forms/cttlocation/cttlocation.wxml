@@ -1,0 +1,27 @@
+<view class="af-wrapper af-cttlocation">
+  <view class=" af-field-title">
+    <text class="af-title-title" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ title }}">{{ title }}</text>
+    <text class="af-title-required" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ required == '1' }}">*</text>
+    <text class="af-title-err" wx:if="{{err}}">{{err}}</text>
+  </view>
+  <text class="af-title-desc" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+  <picker
+    mode="multiSelector"
+    bindchange="bindMultiPickerChange"
+    bindcolumnchange="bindMultiPickerColumnChange"
+    value="{{multiIndex}}"
+    range="{{locations}}"
+    range-key="{{cityNameKey}}"
+  >
+    <view class="af-com" style="min-height: 24px;" wx:if="{{locale == 'zh-CN'}}">
+      <text class="city-name-txt">{{locations[0][multiIndex[0]].cityName}}</text> 
+      <text class="city-name-txt">{{locations[1][multiIndex[1]].cityName}}</text>
+      <text class="city-name-txt">{{locations[2][multiIndex[2]].cityName}}</text>
+    </view>
+    <view class="af-com" style="min-height: 24px;" wx:else>
+      <text class="city-name-txt">{{locations[0][multiIndex[0]].cityEnName}}</text> 
+      <text class="city-name-txt">{{locations[1][multiIndex[1]].cityEnName}}</text>
+      <text class="city-name-txt">{{locations[2][multiIndex[2]].cityEnName}}</text>
+    </view>
+  </picker>
+</view>

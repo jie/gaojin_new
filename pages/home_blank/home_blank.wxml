@@ -1,0 +1,86 @@
+<view class="page">
+<!-- <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+ class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh"> -->
+<!--头部幻灯片-->
+  <view class="header bgW">
+    <swiper 
+    indicator-dots="true"
+    indicator-active-color="#FFFFFF"
+    autoplay="true"
+    interval="3000"
+    circular="true"
+    class="home-swiper">
+      <swiper-item class="swiper-item" bindtap="jumpUrlFirst">
+        <image class="swiper-image" src="http://image.srmxm.cn/tu1.jpg"></image>
+      </swiper-item>
+      <swiper-item class="swiper-item" bindtap="jumpUrlSecond">
+        <image class="swiper-image" src="http://image.srmxm.cn/tu2.jpg"></image>
+      </swiper-item>
+    </swiper>
+<!--头部导航栏-->
+    <view class="header-nav">
+      <view class="header-nav-item" bindtap="jumpToNews">
+        <image class="header-nav-img" src="../../assets/app_images/gaojin/xinwen.png"></image>
+         <view class="header-nav-itme-title">
+          {{language.news}}
+        </view>
+      </view>
+     
+      <view class="header-nav-item" bindtap="jumpToProfessor">
+        <image class="header-nav-img" src="../../assets/app_images/gaojin/jiaoshou.png"></image>
+        <view class="header-nav-itme-title">
+          {{language.professor}}
+        </view>
+      </view>
+      <view class="header-nav-item" bindtap="jumpToApply">
+        <image class="header-nav-img" src="../../assets/app_images/gaojin/apply.png"></image>
+        <view class="header-nav-itme-title">
+          立即申请
+        </view>
+      </view>
+      <view class="header-nav-item" bindtap="jumpToSalfer">
+        <image class="header-nav-img" src="../../assets/app_images/gaojin/SAI@3x.png"></image>
+        <view class="header-nav-itme-title">
+          SAIFer
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!--body-->  
+    <view class="weui-panel weui-panel_access">
+      <!--动态标题-->
+      <view class="weui-panel__hd">
+        <text class="">{{language.news}}</text>
+        <text class="more" bindtap="jumpToNews">{{language.more}}</text>
+      </view>
+      <!--动态列表-->
+      <view class="view_info_desc">
+      
+        <view class="news-list-item" bindtap="jumpToNewDetail" wx:for="{{newsData}}" wx:for-item="new" data-entity="{{new}}" >
+          <image class="news-list-item-image floatR" src="{{new.artcView.artcCover[0].accessUrl}}" wx:if="{{new.artcView && new.artcView.artcCover  && new.artcView.artcCover[0].accessUrl}}"></image>
+          <view space="nbsp" class="news-list-item-title">
+            {{new.artcTitle}}
+          </view>
+          <view class="news-list-item-tags">
+            <view class="news-cate">
+              {{new.groupInfo.groupName}}
+            </view>
+            <view class="news-time">
+              {{new._createAt}}
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+
+
+      <!-- <loading hidden="{{hidden}}" bindchange="loadingChange"> 
+	      加载中... 
+	    </loading>  -->
+<!-- </scroll-view> -->
+
+</view>

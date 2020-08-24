@@ -1,0 +1,34 @@
+
+.header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.dialog-title {
+  text-align: center;
+}
+.item {
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.item-inner {
+  /* margin: 10px; */
+}
+
+.title {
+  color: #000
+}
+
+.address {
+  font-size: 80%;
+  color: #666
+}
+
+.dialog {
+  background-color: #fff;
+}

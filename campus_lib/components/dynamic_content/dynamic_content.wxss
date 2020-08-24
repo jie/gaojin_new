@@ -1,0 +1,195 @@
+.moments-post {
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding-bottom:10px;
+}
+
+.post-wrapper {
+  display: flex;
+  padding: 10px
+}
+
+.header {
+  font-size: 90%;
+}
+
+.avatar {
+  width:50px;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar image {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.username {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.createAt {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 90%;
+  color: #999
+}
+
+.paragraph {
+  line-height: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.thumb-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #ddd; */
+  box-sizing: border-box;
+}
+
+.thumbnail {
+  background-position: center center;
+  background-size: cover;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.ico {
+  height: 16px;
+  width: 16px;
+}
+
+.tool-bar {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 20px;
+}
+
+.tool {
+  flex: 1;
+  display: flex;
+}
+
+.tool-bar .tool-btn {
+  font-size: 90%;
+  display: flex;
+}
+
+.location {
+  display: flex;
+}
+
+.tool .tool-btn {
+  display: flex;
+  min-width: 40px;
+  font-size:90%;
+  justify-content:center;
+  align-items:center;
+}
+
+.txt {
+  margin-left: 5px;
+  color: #999
+}
+
+.author {
+  font-size: 110%;
+  font-weight: bold;
+  color: #333;
+}
+
+.title {
+  color: #999;
+  margin-top: 5px;
+  font-size: 90%;
+}
+
+
+.input-section {
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  height: 50px;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ccc;
+  z-index: 100
+}
+
+.input-section input {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  height: 36px;
+  line-height: 36px;
+  background-color: #fff;
+  flex:1;
+  box-sizing: border-box;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.send-btn {
+  width: 60px;
+  background-color: #eee;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment .comment-li {
+  display: block;
+  line-height: 26px;
+}
+
+.comment .comment-ul {
+  display: block;
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.comment-user {
+  color: #333;
+}
+.comment-content {
+  color: #666;
+}
+
+.origin-user {
+  color: #333;
+}
+
+.reply-text {
+  color: #666;
+}

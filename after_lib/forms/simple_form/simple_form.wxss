@@ -1,0 +1,43 @@
+
+/* backgroundColor : "#f8f8f8"
+contentBackgroundColor : "#f8f8f8"
+contentFontSize : "1"
+cpntDescColor : "#666666"
+cpntTitleColor : "#333333"
+formTitleBackgroundColor : "#669acc"
+formTitleColor : "#ffffff"
+formWidth : "2"
+lineHeight : "1" */
+
+.al-form {
+  position: relative;
+  padding-bottom: 30rpx;
+  color: #333;
+}
+
+.thumb .thumb-image {
+  width: 100%;
+}
+
+.cpnts {
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.form-button {
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+  /* margin-top:100px; */
+}
+
+.submit-button {
+  font-weight: bold;
+}
+
+.footmeta {
+  font-size:12px;
+  text-align:center;
+  margin-top:30px;
+  color:#999;
+}

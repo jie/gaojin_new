@@ -1,0 +1,5 @@
+<view class="success-page">
+  <image class="item icon" src="../../assets/images/success.png"></image>
+  <text class="item item-msg">{{msg || language.submit_success}}</text>
+  <button class="item backbtn" bindtap='goBack'>{{ language.view_my_events }}</button>
+</view>

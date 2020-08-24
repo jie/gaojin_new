@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的活动",
+  "usingComponents": {
+    "wux-icon": "../../dist/icon/index",
+    "wux-button": "../../dist/button/index",
+    "wux-toast": "../../dist/toast/index",
+    "wux-loading": "../../dist/loading/index",
+    "tab": "../../libs/components/tab/tab"
+  }
+}

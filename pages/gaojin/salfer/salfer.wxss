@@ -1,0 +1,152 @@
+/* pages/gaojin/professor/professor.wxss */
+@import "../../../assets/style.wxss";
+@import "../../../libs/weui/weui.wxss";
+@import "../../../assets/base.wxss";
+.page {
+  min-height: 100vh;
+  background-color: #F5F7FB;
+}
+.view-page{
+  height: 100vh;
+  background-color: #F5F7FB;
+}
+
+.top10{
+  padding-top: 10px;
+
+}
+
+.scroll-view-item {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  color: #888;
+  font-size: 14px;
+  width: 180rpx;
+
+}
+
+.current-target {
+  color: #000000 ;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.post-category {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 9;
+}
+
+.member-item{
+  background-color: #FFFFFF;
+  overflow: hidden;
+  width: 100%;
+  margin: 10px auto;
+  border-radius: 4pt;
+  margin-top: 0;
+
+
+}
+
+
+.item-img{
+  width: 230rpx;
+  height: 230rpx;
+  float: left;
+
+}
+.item-title{
+  margin-left: 109px;
+
+}
+
+.item-name{
+  font-size: 34rpx;
+  padding: 10px 0;
+
+}
+.item-commy{
+  font-size: 26rpx;
+  color: #9DA1A8;
+
+}
+
+.posL250{
+  padding-left: 27rpx;
+
+}
+
+.item-connect{
+  position: absolute;
+  top: 0;
+  right: 20rpx; 
+  font-size: 30rpx;
+  color: #B8A47F;
+}
+.post-members{
+  padding: 10px;
+
+}
+
+
+image.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 23px;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+
+.guests.weui-cells {
+  margin-top: 0
+}
+
+.weui-cell__desc .ellipsis {
+  width: calc(100% - 80px);
+}
+
+.ellipsis{
+  font-size: 21rpx;
+}
+
+.prevent{
+  position:   fixed ; 
+  top: 0px ; 
+  left:   0px ; 
+  width:   100% ; 
+  height:   100% ; 
+  overflow:   hidden ; 
+  z-index:   0 ; 
+}
+
+
+.weui-cells:after {
+  border-bottom: 0;
+}
+
+.member-name{
+  font-size: 29rpx;
+  margin-bottom: 12rpx;
+
+}
+
+.member-items{
+  background-color: #fff;
+
+
+}
+
+.weui-cell{
+  border-bottom: 3rpx solid #f5f5f5;
+  margin: 0 10px;
+  padding-left: 10rpx;
+
+
+}

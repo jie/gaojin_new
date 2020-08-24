@@ -1,0 +1,18 @@
+<div class="weui-cells" wx:if="{{ cpntDatas && cpntDatas.length!=0 }}">
+	<div class="weui-cell " wx:for="{{ cpntDatas }}" wx:key="{{ index }}">
+		<div class="weui-cell__bd">
+			<p>{{item.title}}</p>
+		</div>
+		<div class="weui-cell__ft">
+      <view class="value" wx:key="value" wx:for="{{item.values}}" wx:for-item="value">
+        <view class="imgOpts" wx:if="{{item.settings.type == 'imgRadio' || item.settings.type == 'imgCheckbox'}}">
+          <view class="optImage">
+            <image bindtap="onPreviewImage" data-imageurl="{{value.image}}" src="{{value.image}}" style="width: 30px; height: 30px; margin-right: 6px"></image>
+          </view>
+          <view class="optTitle">{{value.title}}</view>
+        </view>
+        <view wx:else>{{value}}</view>
+      </view>
+    </div>
+	</div>
+</div>

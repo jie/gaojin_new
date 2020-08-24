@@ -1,0 +1,41 @@
+/* pages/gaojin/project/project.wxss */
+@import "../../../libs/weui/weui.wxss";
+@import "../../../assets/style.wxss";
+
+.view-page{
+  background-color: #F5F5F5;
+  height: 100vh;
+}
+
+.project{
+  overflow: hidden;
+}
+
+.project-item{
+  background-color: #FFFFFF;
+  margin: 0rpx 15rpx;
+  margin-top: 10px;
+  border-radius: 14rpx;
+  overflow: hidden;
+}
+
+.item-img{
+  height: 95rpx;
+  width: 95rpx;
+  padding: 30rpx;
+  float: left;
+}
+
+.item-row{
+  padding-top: 60rpx;
+  font-size: 28rpx;
+
+}
+
+.item-arrow{
+  float: right;
+  padding-right: 26rpx;
+  width: 30rpx;
+  height: 42rpx;
+
+}

@@ -1,0 +1,32 @@
+@import "../../../libs/weui/weui.wxss";
+@import "../../../assets/style.wxss";
+
+
+.view-page {
+  min-height: 100vh;
+  font-size: 26rpx;
+  padding-bottom: 30px;
+}
+.header{
+  height: 110rpx;
+  margin: 10px; 
+  border-bottom: 1rpx solid #7B7B7B;
+  padding-bottom: 20rpx;
+}
+.title{
+  height: 70rpx;
+  line-height: 70rp;
+  font-weight: bold;
+  font-size: 38rpx;
+}
+.info{
+  color: #7b7b7b;
+
+}
+.content {
+  margin: 0 10px;
+  color: #666;
+  text-align: justify;
+  text-justify: inter-ideograph;
+
+}

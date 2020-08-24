@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "电子票",
+  "usingComponents": {
+    "wux-dialog": "../../dist/dialog/index",
+    "wux-toast": "../../dist/toast/index"
+  }
+}

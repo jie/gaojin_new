@@ -1,0 +1,13 @@
+<view class="dialog">
+  <view class="header" wx:if="{{title}}">
+    <text class="dialog-title">{{title}}</text>
+  </view>
+  <view class="items">
+    <view class="item" wx:for="{{entities}}" wx:key="{{index}}" bindtap="tapConfirm" data-index="{{index}}">
+      <view data-index="{{index}}" class="item-inner">
+        <view data-index="{{index}}" class="title">{{item.title}}</view>
+        <view data-index="{{index}}" class="address" wx:if="{{item.address}}">{{item.address}}</view>
+      </view>
+    </view>
+  </view>
+</view>

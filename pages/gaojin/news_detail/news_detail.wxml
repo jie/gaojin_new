@@ -1,0 +1,16 @@
+<import src="../../../libs/wxParse/wxParse.wxml" />
+<view class="view-page">
+  <view class="header">
+    <view class="title">
+    {{entity}}
+    </view>
+    <view class="info">
+      作者：上海高级金融学院 | 时间：2091-11-17
+    </view>
+  </view>
+
+  <view class="content">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
+
+</view>

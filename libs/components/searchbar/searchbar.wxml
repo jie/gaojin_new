@@ -1,0 +1,26 @@
+<view class="weui-cells search-bar">
+  <view class="weui-search-bar" id="searchBar">
+    <view class="weui-search-bar__form">
+        <view 
+          wx:if="{{!isFocus}}"
+          class="weui-search-bar__box unfocused" 
+          bindtap="onFocusSearchbar"
+          id="searchText">
+            <image src="../../assets/images/search-dark.png" class="ico weui-icon-search" />
+            <span>{{searchText || placeholder}}</span>
+        </view>
+        <view class="weui-search-bar__box focused" wx:else>
+          <image src="../../assets/images/search-dark.png" class="ico weui-icon-search" />
+          <input 
+            type="text" 
+            class="weui-search-bar__input" 
+            id="searchInput"
+            bindblur="onBlur"
+            confirm-type="search"
+            bindconfirm="handleConfirm"
+            focus="{{isFocus}}" />
+        </view>
+    </view>
+    <view wx:if="{{isFocus}}" bindtap="tapCancel" class="weui-search-bar__cancel-btn" style="color: {{themeColor}}" id="searchCancel">{{cancelText}}</view>
+  </view>
+</view>

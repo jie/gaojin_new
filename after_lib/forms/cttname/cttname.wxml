@@ -1,0 +1,8 @@
+<view class="af-wrapper af-cttname">
+  <view class=" af-field-title">
+    <text class="af-title-title" wx:if="{{ title }}">{{ title }}</text>
+    <text class="af-title-required" wx:if="{{ required == '1' }}"  >*</text>
+  </view>
+   <text class="af-title-desc" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+  <input class="af-com" type="text" bindinput="onInputChange" value="{{initValue||''}}"></input>
+</view>

@@ -1,0 +1,77 @@
+@import "../afform.wxss";
+
+.af-select-group {
+  max-height: 240px;
+  position: relative;
+  font-size: 90%;
+}
+
+.af-select-option {
+  width: 100%;
+  font-size: 90%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+  padding-left: 40rpx;
+  padding-right: 20rpx;
+  background-color: #fff;
+}
+
+.af-select-option:last-child {
+  border-bottom: 0;
+}
+
+.af-select-header {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.af-select-panel {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+  border-left: 2rpx solid #ddd;
+  border-right: 2rpx solid #ddd;
+  border-bottom: 2rpx solid #ddd;
+  box-sizing: border-box;
+  margin-top: 2rpx;
+}
+
+.af-other-field {
+  background-color: #fff;
+}
+
+/* select */
+.af-select .af-down-icon {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 15rpx;
+  top: 20rpx;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.af-select .af-down-icon.reversed {
+  animation: rotateIcon 0.5s;
+  animation-iteration-count:1;
+  animation-fill-mode:forwards;
+}
+
+@keyframes rotateIcon {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(180deg);
+    }
+}

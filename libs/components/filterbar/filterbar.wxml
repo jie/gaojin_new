@@ -1,0 +1,22 @@
+<view class="bar {{enviroment}}-style {{currentIndex!==null && isDark ? 'dark': ''}}" catchtouchmove="true" bindtap='closeFilter' style="height: {{currentIndex!==null?'100%': headerHeight + 'px'}}">
+  <view class="wrapper" catchtap='true' style="height: {{headerHeight}}px">
+    <view class="bar-item" bindtap="ontapBarItem" wx:for="{{headerItems}}" data-tapindex="{{index}}" data-tapvalue="{{item.value}}" wx:key="{{item.value}}">
+      <block wx:if="{{!item.slotName}}">
+        <view class="bar-label">{{item.label}}</view>
+        <view class="d3 {{currentIndex === index?'rotate-label':''}}" wx:if="{{enviroment === 'ceibs' || enviroment === 'pro_kedge'}}" ></view>
+        <image wx:else class="{{currentIndex === index?'rotate-label':''}}" style="width:16px; height: 16px; margin-left:5px;" src="../../assets/images/arrow.png"></image>
+      </block>
+      <block wx:else>
+        <slot name="{{item.slotName}}"></slot>
+      </block>
+    </view>
+  </view>
+  <scroll-view id="filterOptions" class="filterOptions animated faster {{actionCls}}" scroll-y="{{true}}" style="max-height: {{maxheight}}px; top: {{headerHeight}}px;" catchtap='true'>
+    <view class="filterOption" bindtap="ontapAllItem" data-tapindex="{{ allItems[currentIndex].value }}" wx:key="{{allItems[currentIndex].value}}" wx:if="{{allItems && allItems[currentIndex] && allItems[currentIndex].label}}">
+      {{ allItems[currentIndex].label }}
+    </view>
+    <view class="filterOption" bindtap="ontapItem" wx:for="{{ currentItems }}" data-tapindex="{{ index }}" data-tapcol="{{currentIndex}}" wx:key="{{item.value}}">
+      {{ item.label }}
+    </view>
+  </scroll-view>
+</view>

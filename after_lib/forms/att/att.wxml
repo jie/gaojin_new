@@ -1,0 +1,17 @@
+<view class="af-wrapper">
+  <view class=" af-field-title">
+    <text class="af-title-title" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ title }}">{{ title }}</text>
+    <text class="af-title-required" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ required == '1' }}">*</text>
+    <text class="af-title-err" wx:if="{{err}}">{{err}}</text>
+    <text class="af-title-desc" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+    <text class="af-title-support-filetype" wx:if="{{support_file_types}}">{{language.support}}{{support_file_types}}</text>
+  </view>
+  <view class="af-uploader" bindtap="ontapUpload">
+    <text class="af-att-limitation" wx:if="{{uploadStatus === 0}}">{{ language.file_size_msg }}</text>
+    <text class="af-att-limitation" wx:if="{{uploadStatus === 1}}">{{uploadExtName}} {{language.file_uploaded }}</text>
+    <image src="../_icons/plus-box-dark.png" class="att-plus"></image>
+  </view>
+  <view class="af-uploaded" wx:if="{{uploadFiles && uploadFiles.length!= 0}}">
+    <view class="af-uploaded-item" wx:for="{{uploadFiles}}">{{item.fileName}}</view>
+  </view>
+</view>

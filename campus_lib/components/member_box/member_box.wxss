@@ -1,0 +1,32 @@
+@import "../../../libs/weui/weui.wxss";
+@import "../../../assets/style.wxss";
+
+.weui-media-box {
+  position: relative; 
+}
+.weui-media-box__hd {
+  margin-right: 10px;
+}
+
+.weui-media-box__bd {
+  flex: 1;
+}
+
+.weui-btn {
+  color: #fff;
+  background-color: #22A1F9!important;
+}
+
+
+.weui-media-box {
+  width: 100%;
+}
+
+
+.nav-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 90px;
+  height: 100%;
+}

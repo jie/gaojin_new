@@ -1,0 +1,27 @@
+@import "../afform.wxss";
+
+.af-stars {
+  display: flex;
+  align-items: center;
+}
+
+.af-star {
+  width: 66rpx;
+  height: 66rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.af-star .star-on-icon, .af-star .star-off-icon {
+  width: 66rpx;
+  height: 66rpx;
+}
+
+.af-title-desc {
+  font-size: 80%;
+  color: #ccc;
+  border-top: 2rpx dashed #999;
+  padding-top: 6rpx;
+  padding-bottom: 6rpx;
+}

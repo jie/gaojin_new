@@ -1,0 +1,30 @@
+@import "../afform.wxss";
+
+.af-cutoff-line {
+  border-top: 2rpx solid #ddd;
+}
+
+.af-cutoff-title {
+  text-align: center;
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.af-title-desc {
+  border-top: 0 !important;
+  color: #666;
+  margin-top: 10rpx;
+  font-size:80%;
+}
+
+.af-align-left {
+  text-align: left;
+}
+.af-align-right {
+  text-align: right;
+}
+.af-align-center {
+  text-align: center;
+}

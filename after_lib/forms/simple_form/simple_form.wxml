@@ -1,0 +1,356 @@
+<view id="Afform" class="al-form" wx:if="{{formObj}}">
+  <view class="thumb" wx:if="{{formObj.formView.style && formObj.formView.style.formTitleBackgroundImg && formObj.formView.style.formTitleBackgroundImg.accessUrl}}"> 
+    <image class="thumb-image" mode="widthFix" src="{{formObj.formView.style.formTitleBackgroundImg.accessUrl}}"></image>
+  </view>
+  <view class="cpnts">
+    <view class="cpnt" wx:key="{{item.cpntId}}" wx:for="{{formCpnts}}">
+      <view wx:if="{{componentMap[item.type]=='radio'}}">
+        <af-radio 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          title="{{item.title}}" 
+          cpntId="{{item.cpntId}}" 
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}"
+          colsLayout="{{item.colsLayout}}"
+          otherOption="{{item.otherOption}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          otherOptionName="{{item.otherOptionName}}"
+          options="{{item.options}}"
+          cpntSettings="{{item}}">
+        </af-radio>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='att'}}">
+        <af-att 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField"
+          data-cpntid="{{item.cpntId}}"
+          required="{{item.required}}" 
+          cpntId="{{item.cpntId}}" 
+          title="{{item.title}}" 
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}" 
+          err="{{item.err}}"
+          numLimit="{{item.numLimit}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          fileType="{{item.fileType}}">
+        </af-att>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='checkbox'}}">
+        <af-checkbox 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          cpntId="{{item.cpntId}}" 
+          title="{{item.title}}" 
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}" 
+          err="{{item.err}}"
+          colsLayout="{{item.colsLayout}}"
+          otherOption="{{item.otherOption}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          otherOptionName="{{item.otherOptionName}}"
+          options="{{item.options}}"
+          cpntSettings="{{item}}">
+        </af-checkbox>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='date'}}">
+        <af-calendar 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          cpntId="{{item.cpntId}}" 
+          title="{{item.title}}" 
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          dateFormat="{{item.dateFormat}}"
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}">
+        </af-calendar>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='select'}}">
+        <af-picker 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          cpntId="{{item.cpntId}}" 
+          title="{{item.title}}" 
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}" 
+          err="{{item.err}}"
+          initValue="{{item.initValue}}"
+          options="{{item.options}}" 
+          otherOption="{{item.otherOption}}"
+          formStyle="{{formObj.formView.style}}"
+          otherOptionName="{{item.otherOptionName}}"
+          defaultTip="{{item.defaultTip}}"
+          cpntSettings="{{item}}">
+        </af-picker>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='cutoff'}}">
+        <af-cutoff 
+          title="{{item.title}}" 
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          titleAlign="{{item.titleAlign}}" 
+          formStyle="{{formObj.formView.style}}"
+          descAlign="{{item.descAlign}}">
+        </af-cutoff>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='text'}}">
+        <af-text 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          title="{{item.title}}" 
+          cpntId="{{item.cpntId}}"
+          formStyle="{{formObj.formView.style}}"
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}"
+          initValue="{{item.initValue}}"
+        >
+        </af-text>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='number'}}">
+        <af-text 
+          id="FORM_{{item.cpntId}}"
+          inputType="{{'digit'}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          title="{{item.title}}" 
+          cpntId="{{item.cpntId}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}"
+        >
+        </af-text>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='textarea'}}">
+        <af-textarea 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          title="{{item.title}}" 
+          cpntId="{{item.cpntId}}" 
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}" 
+          err="{{item.err}}"
+          size="{{item.size}}">
+        </af-textarea>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='score'}}">
+        <af-score 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          title="{{item.title}}" 
+          cpntId="{{item.cpntId}}" 
+          starNum="{{item.starNum}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}"
+          >
+        </af-score>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='cttBirth'}}">
+        <af-calendar 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          cpntId="{{item.cpntId}}" 
+          title="{{item.title}}" 
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          dateFormat="2"
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}">
+        </af-calendar>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='cttSex'}}">
+        <af-cttsex 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          cpntId="{{item.cpntId}}" 
+          title="{{item.title}}" 
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          colsLayout="{{item.colsLayout}}"
+          options="{{item.options }}">
+        </af-cttsex>
+      </view>
+
+      <view wx:elif="{{componentMap[item.type]=='cttLocation'}}">
+        <af-cttlocation 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          title="{{item.title}}" 
+          cpntId="{{item.cpntId}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}"
+        >
+        </af-cttlocation>
+      </view>
+
+      <view wx:elif="{{componentMap[item.type]=='sourceTag'}}">
+        <af-sourcetag 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}" 
+          cpntId="{{item.cpntId}}" 
+          title="{{item.title}}" 
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}" 
+          err="{{item.err}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          colsLayout="{{item.colsLayout}}"
+          otherOption="{{item.otherOption}}"
+          otherOptionName="{{item.otherOptionName}}"
+          options="{{item.options}}"
+          cpntSettings="{{item}}">
+        </af-sourcetag>
+      </view>
+      <view wx:elif="{{componentMap[item.type]=='img'}}">
+        <af-img 
+          id="FORM_{{item.cpntId}}"
+          bind:action="onChangeField" 
+          required="{{item.required}}"
+          cpntId="{{item.cpntId}}"
+          type="{{item.type}}"
+          sortNum="{{item.sortNum}}"
+          cpntStatus="{{item.cpntStatus}}"
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}"
+          descAlign="{{item.descAlign}}"
+          imgDisplayType="{{item.imgDisplayType}}"
+          linkUrl="{{item.linkUrl}}"
+          imgSource="{{item.imgSource}}"
+          extImgUrl="{{item.extImgUrl}}"
+          fileName="{{item.fileName}}"
+          accessUrl="{{item.accessUrl}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          isUpload="{{item.isUpload}}">
+        </af-img>
+      </view>
+
+     <view wx:elif="{{componentMap[item.type]=='imgRadio'}}">
+        <af-imgradio 
+          id="FORM_{{item.cpntId}}"
+          required="{{item.required}}"
+          bind:action="onChangeField" 
+          cpntId="{{item.cpntId}}"
+          type="{{item.type}}"
+          title="{{item.title}}"
+          sortNum="{{item.sortNum}}"
+          cpntStatus="{{item.cpntStatus}}"
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          defaultOptIds="{{item.defaultOptIds}}"
+          options="{{item.imgOptions}}"
+          cpntSettings="{{item}}">
+        </af-imgradio>
+      </view>
+  
+     <view wx:elif="{{componentMap[item.type]=='imgCheckbox'}}">
+      <af-imgcheckbox 
+        id="FORM_{{item.cpntId}}"
+        required="{{item.required}}"
+        bind:action="onChangeField" 
+        cpntId="{{item.cpntId}}"
+        type="{{item.type}}"
+        title="{{item.title}}"
+        sortNum="{{item.sortNum}}"
+        cpntStatus="{{item.cpntStatus}}"
+        desc="{{item.desc}}"
+        locale="{{locale}}"
+        fieldType="{{item.type}}"
+        err="{{item.err}}"
+        formStyle="{{formObj.formView.style}}"
+        initValue="{{item.initValue}}"
+        defaultOptIds="{{item.defaultOptIds}}"
+        selectControl="{{item.selectControl}}"
+        selectControlValue="{{item.selectControlValue}}"
+        options="{{item.imgOptions}}"
+        cpntSettings="{{item}}">
+      </af-imgcheckbox>
+    </view>
+     <view wx:elif="{{componentMap[item.type]=='goods'}}">
+        <af-goods 
+          id="FORM_{{item.cpntId}}"
+          required="{{item.required}}"
+          bind:action="onChangeField" 
+          cpntId="{{item.cpntId}}"
+          type="{{item.type}}"
+          title="{{item.title}}"
+          sortNum="{{item.sortNum}}"
+          cpntStatus="{{item.cpntStatus}}"
+          desc="{{item.desc}}"
+          locale="{{locale}}"
+          fieldType="{{item.type}}"
+          err="{{item.err}}"
+          formStyle="{{formObj.formView.style}}"
+          initValue="{{item.initValue}}"
+          options="{{item.goodsOptions}}"
+          cpntSettings="{{item}}">
+        </af-goods>
+    </view>
+    <view wx:else style="box-sizing:border-box; padding: 40rpx; margin-bottom: 40rpx; background-color: #f9f9f9; text-align: center;">
+      <text style="font-size: 70%">不支持渲染{{item.type}}组件</text>
+    </view>
+    </view>
+  </view>
+  <view class="form-button">
+    <button 
+      block
+      class="submit-button" 
+      style="background-color: {{formObj.formView.style.formTitleBackgroundColor}}; color: #fff"  
+      bindtap="submitSignupForm">{{formObj.formView.submitButtonText}}
+    </button>
+  </view>
+  <view class="footmeta">
+    <text>{{language.base.version_info}}</text>
+  </view>
+</view>

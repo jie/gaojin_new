@@ -1,0 +1,51 @@
+@import "../../libs/weui/weui.wxss";
+@import "../../assets/style.wxss";
+
+
+.count {
+  color: red
+}
+.item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+}
+
+.item .avatar {
+  margin-right: 10px;
+}
+
+.item .avatar image {
+  vertical-align: middle;
+  margin-top: 5px;
+}
+
+.item .name {
+  height: 30px;
+  line-height: 30px;
+  font-size: 85%
+}
+
+.item .time {
+  height: 30px;
+  line-height: 30px;
+  font-size: 85%
+}
+
+image.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 23px;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.weui-cells {
+  margin-top: 0;
+}
+.weui-panel {
+  margin-top: 0;
+}
+
+.weui-cells:after {
+  border-bottom: 1rpx;
+}

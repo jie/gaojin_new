@@ -1,0 +1,21 @@
+<view class="weui-media-box weui-media-small weui-media-box_appmsg">
+  <view class="weui-media-box__hd icon-box">
+      <image mode="aspectFill" class="weui-media-box__thumb" src="{{logoUrl}}" />
+  </view>
+
+  <view class="weui-media-box__bd" wx:if="{{boxType=='career'}}">
+    <h4 class="weui-media-box__title">
+      {{entity.companyName}}
+      <span class="weui-media-box__title-after">{{entity.experianceDateRange }}</span>
+    </h4>
+    <p class="weui-media-box__desc">{{entity.careerName }}</p>
+  </view>
+  <view class="weui-media-box__bd" wx:if="{{boxType=='education'}}">
+    <h4 class="weui-media-box__title">
+      {{locale=='en-US'?entity.schoolNameEN:entity.schoolNameCN}}
+      <span class="weui-media-box__title-after">{{entity.experianceDateRange }}</span>
+    </h4>
+    <p class="weui-media-box__desc">{{locale=='en-US'?entity.diplomaNameEN:entity.diplomaNameCN}} | {{entity.majorName}}</p>
+  </view>
+    <view class="nav-layer" bindtap="goDetail"></view>
+</view>

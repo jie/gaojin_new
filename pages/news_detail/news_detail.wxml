@@ -1,0 +1,19 @@
+<import src="../../libs/wxParse/wxParse.wxml" />
+<view class="view-page" wx:if="{{entity}}">
+  <view class="view_info_top">
+    <view class="view_info_wrap">
+      <view class="title">
+        {{entity.artcTitle}}
+      </view>
+      <view class="tools">
+        <view class="view_num">
+          <block wx:if="{{entity.artcAuthor}}">{{language.base.author}}：{{entity.artcAuthor}}</block> <block wx:if="{{entity.artcAuthor && entity.displayPubTime}}"> | </block> <block wx:if="{{entity.displayPubTime}}">{{language.base.pub_time}} {{entity._createAt}}</block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="empty-cell"></view>
+  <view class="content" wx:if="{{content}}">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+</view>

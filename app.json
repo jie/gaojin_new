@@ -1,0 +1,82 @@
+{
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000
+  },
+  "pages": [
+    "pages/landing/landing",
+    "pages/events/events",
+    "pages/events_page/events",
+    "pages/event_detail/event_detail",
+    "pages/home/home",
+    "pages/index/index",
+    "pages/mine_kedge/mine_kedge",
+    "pages/signup/signup",
+    "pages/ticket/ticket",
+    "pages/guest_detail/guest_detail",
+    "pages/signup_success/signup_success",
+    "pages/mine_events/mine_events",
+    "pages/payment/payment",
+    "pages/replies/replies",
+    "pages/home_kedge/home_kedge",
+    "pages/news/news",
+    "pages/news_detail/news_detail",
+    "pages/outside/outside",
+    "pages/home_blank/home_blank",
+    "pages/form_feedback/form_feedback",
+    "pages/kedge/mba/mba",
+    "pages/kedge/dba/dba",
+    "pages/kedge/ibba/ibba",
+    "pages/kedge/summer_school/summer_school",
+    "pages/kedge/programmes/programmes",
+    "pages/gaojin/news_detail/news_detail",
+    "pages/gaojin/project/project",
+    "pages/gaojin/video_list/video_list",
+    "pages/gaojin/professor/professor",
+    "pages/gaojin/salfer/salfer",
+    "pages/gaojin/out_link/out_link",
+    "pages/gaojin/articles/articles",
+    "pages/gaojin/article_detail/article_detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#27272A"
+  },
+  "tabBar": {
+    "selectedColor": "#000",
+    "color": "#999",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home_blank/home_blank",
+        "text": "首页",
+        "iconPath": "assets/app_images/kedge/shouye-wx.png",
+        "selectedIconPath": "assets/app_images/gaojin/shouye-xz@3x.png"
+      },
+      {
+        "pagePath": "pages/gaojin/project/project",
+        "text": "项目",
+        "iconPath": "assets/app_images/gaojin/xiangmu-xz@3x.png",
+        "selectedIconPath": "assets/app_images/gaojin/xiangmu.png"
+      },
+      {
+        "pagePath": "pages/events/events",
+        "text": "活动",
+        "iconPath": "assets/app_images/gaojin/huodong-wx@3x.png",
+        "selectedIconPath": "assets/app_images/gaojin/huodong-wx.png"
+      },
+      {
+        "pagePath": "pages/mine_kedge/mine_kedge",
+        "text": "我的",
+        "iconPath": "assets/app_images/gaojin/wode-wx.png",
+        "selectedIconPath": "assets/app_images/gaojin/wode-wx@3x.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

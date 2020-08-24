@@ -1,0 +1,20 @@
+<view class="af-wrapper af-sourcetag">
+  <view class="af-field-title">
+    <text class="af-title-title" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ title }}">{{ title }}</text>
+    <text class="af-title-required" style="color: {{formStyle.cpntTitleColor}}" wx:if="{{ required == '1' }}"  >*</text>
+    <text class="af-title-limit" style="color: {{formStyle.cpntDescColor}}" wx:if="{{selectControl !== '1'}}">[{{msgMap[selectControlValue]}}]</text>
+    <text class="af-title-err" wx:if="{{err}}">{{err}}</text>
+  </view>
+  <text class="af-title-desc" decode="true" style="color: {{formStyle.cpntDescColor}}" wx:if="{{desc}}">{{desc}}</text>
+  <checkbox-group class="af-options" bindchange="checkboxChange">
+    <label class="af-option af-opt-layout-{{colsLayout}} {{item.disabled}}" wx:for="{{options}}" wx:key="{{ index }}">
+      <checkbox value="{{ index }}" checked="{{item.checked}}" disabled="{{ item.disabled }}" />{{item.optValue}} {{item.limitationMsg}}
+    </label>
+  </checkbox-group>
+  <view class="af-other-field {{otherLimitationDisbaled}}" wx:if="{{ otherOption == '2' }}">
+    <input class="af-com" placeholder-class='fa-lock-placehoder' type="text" value="{{otherInputValue}}" bindinput="onOtherInputChange" placeholder="{{otherOptionLabel}}" disabled="{{otherLimitationDisbaled}}"></input>
+    <view class="limit-other" wx:if="{{otherLimitationMsg}}">
+      {{otherLimitationMsg}}
+    </view>
+  </view>
+</view>

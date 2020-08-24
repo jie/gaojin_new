@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "活动",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "wux-icon": "../../dist/icon/index",
+    "wux-button": "../../dist/button/index",
+    "wux-toast": "../../dist/toast/index",
+    "filterbar": "../../libs/components/filterbar/filterbar"
+  }
+}

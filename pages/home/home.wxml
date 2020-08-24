@@ -1,0 +1,199 @@
+<wux-toast id="wux-toast" />
+<view class="page" style="min-height: 100vh">
+  <view style="width: 100%; height: {{carouselHeight}}px;">
+    <carousel wx:if="{{images && images.length!=0}}" images="{{images}}" indicatorColor="rgba(33,161,249, 0.4)" indicatorActiveColor="rgb(33,161,249)" height="{{carouselHeight}}" style="width: 100%;" autoplay="{{false}}" />
+  </view>
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block>
+        <navigator url="/pages/life/life" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="/assets/icons/school-on.png" />
+          <view class="weui-grid__label">{{language.discovery}}</view>
+        </navigator>
+        <navigator url="/pages/universities/universities" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="/assets/icons/org-on.png" />
+          <view class="weui-grid__label">{{language.university}}</view>
+        </navigator>
+        <navigator url="/pages/class_mine/class_mine" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="/assets/icons/class-on.png" />
+          <view class="weui-grid__label">{{language.my_class}}</view>
+        </navigator>
+        <view bindtap="goContacts" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="/assets/icons/contact-on.png" />
+          <view class="weui-grid__label">{{language.contacts}}</view>
+        </view>
+      </block>
+    </view>
+    <view class="weui-grids" style="margin-top: 10px">
+      <block>
+        <navigator url="/pages/groups/groups" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="/assets/icons/group-on.png" />
+          <view class="weui-grid__label">{{language.groups}}</view>
+        </navigator>
+        <navigator url="/pages/jobs/jobs" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="/assets/icons/offer-on.png" />
+          <view class="weui-grid__label">{{language.jobs}}</view>
+        </navigator>
+        <navigator url="/pages/news/news" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="/assets/icons/news-blue.png" />
+          <view class="weui-grid__label">{{language.news}}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+
+  <h4 class="weui-title">What Alumni Say?</h4>
+  <view class="moments-posts">
+    <view class="weui-cells">
+      <view class="moments-post">
+        <a href="contact_view.php" class="weui-media-box weui-media-box_appmsg weui-media-small">
+          <view class="weui-media-box__hd">
+            <image class="weui-media-box__thumb" src="http://ui.famousedu.com/alumni_app/images/3.png" alt="" />
+          </view>
+          <view class="weui-media-box__bd">
+            <view class="weui-media-box__title">
+              <span class="author">Stella Dong
+                <!-- <span class="weui-rank">v2</span> --></span>
+              <span class="weui-media-box__title-after">Pm 8:12</span>
+            </view>
+            <p class="weui-media-box__desc">Marketing Assistant | Philips China</p>
+          </view>
+        </a>
+        <!-- post内容 -->
+        <p class="paragraph">
+          Another winter, a wind and we meet unexpectedly. Many people don't like windy days in winter, especially those in southern China. They often feel that it is too fierce and impersonal.
+        </p>
+        <!-- 伸张链接 -->
+        <!-- <a class="paragraphExtender">显示全文</a> -->
+        <view class="thumbnails">
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo3.jpg);"></view>
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo4.jpg);"></view>
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo5.jpg);"></view>
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo6.jpg);"></view>
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo12.jpg);"></view>
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo13.jpg);"></view>
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo14.jpg);"></view>
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo15.jpg);"></view>
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo11.jpg);"></view>
+        </view>
+        <!-- 资料条 -->
+        <view class="tool-bar">
+          <view class="tool">
+            <span>
+              <image class="ico" src="../../assets/icons/zan.png"></image> 55</span>
+            <span>
+              <image class="ico" src="../../assets/icons/comment-dark.png"></image> 2</span>
+          </view>
+          <view class="location">
+            <span>
+              <image class="ico" src="../../assets/icons/location.png"></image> Beijing</span>
+          </view>
+        </view>
+        <!-- 评论区 -->
+        <view class="comment">
+          <ul>
+            <li>
+              <a href="contact_view.php">Sherry</a>：
+              <span>Winter is coming, keep warm!</span>
+            </li>
+            <li>
+              <a href="contact_view.php">Stella</a> To
+              <a href="contact_view.php">Sherry</a>：
+              <span>Thank you!</span>
+            </li>
+          </ul>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells">
+      <view class="moments-post">
+        <a href="contact_view.php" class="weui-media-box weui-media-box_appmsg weui-media-small">
+          <view class="weui-media-box__hd">
+            <image class="weui-media-box__thumb" src="http://ui.famousedu.com/alumni_app/images/4.png" alt="" />
+          </view>
+          <view class="weui-media-box__bd">
+            <h4 class="weui-media-box__title">
+              <span class="author">Sherry Fu</span>
+              <span class="weui-media-box__title-after">12-08</span>
+            </h4>
+            <p class="weui-media-box__desc">China Director | Uom China</p>
+          </view>
+        </a>
+        <!-- post内容 -->
+        <p class="paragraph">
+          When the leaves leave the ginkgo tree and fall to the ground, the leaves of Ginkgo dance like beautiful butterflies in the air.
+        </p>
+        <!-- 伸张链接 -->
+        <!-- <a class="paragraphExtender">显示全文</a> -->
+        <view class="thumbnails">
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo1.jpg);"></view>
+          <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo2.jpg);"></view>
+        </view>
+        <!-- 资料条 -->
+        <view class="tool-bar">
+          <view class="tool">
+            <span>
+              <i class="iconfont icon-laud"></i> 10</span>
+            <span>
+              <i class="iconfont icon-comment"></i> 1</span>
+          </view>
+          <view class="location">
+            <span>
+              <i class="iconfont icon-location"></i> Shanghai</span>
+          </view>
+        </view>
+        <!-- 评论区 -->
+        <view class="comment">
+          <ul>
+            <li>
+              <a href="contact_view.php">Qiao Zhen</a>：
+              <span>Very Beautiful</span>
+            </li>
+          </ul>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells">
+      <view class="moments-post">
+        <a href="contact_view.php" class="weui-media-box weui-media-box_appmsg weui-media-small">
+          <view class="weui-media-box__hd">
+            <image class="weui-media-box__thumb" src="http://ui.famousedu.com/alumni_app/images/5.png" alt="" />
+          </view>
+          <view class="weui-media-box__bd">
+            <h4 class="weui-media-box__title">
+              <span class="author">Yvonne He</span>
+              <span class="weui-media-box__title-after">12-08</span>
+            </h4>
+            <p class="weui-media-box__desc">Director's Assistant | Uom China</p>
+          </view>
+        </a>
+        <!-- post内容 -->
+        <p class="paragraph">
+          Great Change - A large exhibition celebrating the 40th anniversary of reform and opening up gathers talents from all over the world.
+        </p>
+        <!-- 伸张链接 -->
+        <!-- <a class="paragraphExtender">显示全文</a> -->
+        <!-- <view class="thumbnails">
+                  <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo1.jpg);"></view>
+                  <view class="thumbnail" style="background-image: url(http://ui.famousedu.com/alumni_app/images/demo2.jpg);"></view>
+          </view> -->
+        <!-- 资料条 -->
+        <view class="tool-bar">
+          <view class="tool">
+            <span>
+              <i class="iconfont icon-laud"></i> 2</span>
+            <span>
+              <i class="iconfont icon-comment"></i> 0</span>
+          </view>
+          <view class="location">
+            <span>
+              <i class="iconfont icon-location"></i> Shanghai</span>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="tips">
+      <span>END</span>
+    </view>
+  </view>
+</view>
